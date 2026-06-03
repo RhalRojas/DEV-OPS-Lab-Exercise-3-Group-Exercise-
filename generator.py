@@ -1,5 +1,32 @@
+import random
+
+# RPG Character Generator
 def main():
     print("--- Welcome to the Character Generator ---")
     name = input("Enter character name: ")
     char_class = choose_class() # Added by Person B
     print(f"\nCharacter {name} the {char_class} has been created!")
+
+if __name__ == "__main__":
+    main()
+
+def get_starting_gear(char_class):
+    gear = {
+        "Warrior": ["Iron Sword", "Shield"],
+        "Mage": ["Staff", "Mana Potion"],
+        "Rogue": ["Daggers", "Smoke Bomb"]
+    }
+    return gear.get(char_class, ["Ragged Clothes"])
+def choose_class():
+    classes = ["Warrior", "Mage", "Rogue"]
+
+    print("Available Classes:", ", ".join(classes))
+    choice = input("Choose your class: ").capitalize()
+    return choice if choice in classes else "Adventurer"
+
+def roll_attributes():
+    return {
+        "Strength": random.randint(5, 20),
+        "Agility": random.randint(5, 20),
+        "Intellect": random.randint(5, 20)
+    }
