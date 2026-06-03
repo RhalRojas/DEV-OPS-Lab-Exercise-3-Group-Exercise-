@@ -1,3 +1,5 @@
+import random
+
 # RPG Character Generator
 def main():
     print("--- Welcome to the Character Generator ---")
@@ -13,3 +15,10 @@ def choose_class():
     print("Available Classes:", ", ".join(classes))
     choice = input("Choose your class: ").capitalize()
     return choice if choice in classes else "Adventurer"
+
+def roll_attributes():
+    return {
+        "Strength": random.randint(5, 20),
+        "Agility": random.randint(5, 20),
+        "Intellect": random.randint(5, 20)
+    }
