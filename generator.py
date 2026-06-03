@@ -1,8 +1,5 @@
-# RPG Character Generator
 def main():
     print("--- Welcome to the Character Generator ---")
-# Components will be combined here
-    name = "Hero"
-    print(f"\nCharacter {name} has been successfully created!")
-if __name__ == "__main__":
-    main()
+    name = input("Enter character name: ")
+    char_class = choose_class() # Added by Person B
+    print(f"\nCharacter {name} the {char_class} has been created!")
